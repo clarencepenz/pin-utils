@@ -26,7 +26,7 @@ const Footer = () => {
       <Image h="full" position="absolute" right={0} src="/images/right-logo.png" />
       <Flex flexDirection="column" h="389px" bg="#052330" borderTop="1px solid rgba(255, 255, 255, 0.11)">
         <Links />
-        <Flex my="18px" mx="55px" borderTop="1px solid rgba(255, 255, 255, 0.16)">
+        <Flex my="18px" mx={{ base: "15px", md: "55px"}} borderTop="1px solid rgba(255, 255, 255, 0.16)">
           <Box mr="auto" mt={4}>
             <Text color="#F9F9FB" fontSize="14px" fontWeight="400">
               © 2022 swap.xyz
