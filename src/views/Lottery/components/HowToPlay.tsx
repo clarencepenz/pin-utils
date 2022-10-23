@@ -251,7 +251,7 @@ const HowToPlay: React.FC<React.PropsWithChildren> = () => {
   ]
 
   return (
-    <Box width={{ base: "300px", sm: "450px", md: "100%"}}>
+    <Box width={{ base: "340px", sm: "450px", md: "100%"}}>
       <Flex mb="40px" alignItems="center" flexDirection="column">
         <Heading textTransform="uppercase" fontWeight="900" fontSize={{ base: "24px", md: "48px"}} mb="24px" color="#fff">
           {t('How to Play')}
