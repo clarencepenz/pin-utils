@@ -205,16 +205,17 @@ export default function CurrencyInputPanel({
           )}
         </Box>
         <Flex flexDirection="column">
-          <Flex mb={2}>
-            <Text textAlign="left" mr="auto">
+          <Flex mb={2} alignItems="center">
+            <Text color="#34D399" textTransform="uppercase" fontSize="10px" textAlign="left"  mr="auto">
               Select tokens
             </Text>
             {account && (
               <Text
                 onClick={!disabled && onMax}
                 color="textSubtle"
-                fontSize="14px"
                 style={{ display: 'inline', cursor: 'pointer' }}
+                textTransform="uppercase" 
+                fontSize="10px"
               >
                 {!hideBalance && !!currency
                   ? t('Balance: %balance%', { balance: selectedCurrencyBalance?.toSignificant(6) ?? t('Loading') })

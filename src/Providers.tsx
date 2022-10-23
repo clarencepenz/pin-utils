@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { ModalProvider, light, dark, UIKitProvider } from '@pancakeswap/uikit'
 import { Provider } from 'react-redux'
 import { SWRConfig } from 'swr'
@@ -10,9 +11,9 @@ import { client } from 'utils/wagmi'
 import { HistoryManagerProvider } from 'contexts/HistoryContext'
 
 const StyledUIKitProvider: React.FC<React.PropsWithChildren> = ({ children, ...props }) => {
-  const { resolvedTheme } = useNextTheme()
+  const { resolvedTheme,  } = useNextTheme()
   return (
-    <UIKitProvider theme={resolvedTheme === 'dark' ? dark : light} {...props}>
+    <UIKitProvider theme={resolvedTheme === 'system' ? dark : dark} {...props}>
       {children}
     </UIKitProvider>
   )
@@ -25,7 +26,7 @@ const Providers: React.FC<React.PropsWithChildren<{ store: Store; children: Reac
   return (
     <WagmiProvider client={client}>
       <Provider store={store}>
-        <NextThemeProvider>
+        <NextThemeProvider forcedTheme='dark'>
           <StyledUIKitProvider>
             <LanguageProvider>
               <SWRConfig
