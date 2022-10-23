@@ -71,13 +71,13 @@ function MyApp(props: AppProps<{ initialReduxState: any }>) {
           content="Cheaper and faster than Uniswap? Discover Util, the leading DEX on BNB Smart Chain (BSC) with the best farms in DeFi and a lottery for CAKE."
         />
         <meta name="theme-color" content="#1FC7D4" />
-        <meta name="twitter:image" content="https://Util.finance/images/hero.png" />
+        <meta name="twitter:image" content="/images/logo-u.png" />
         <meta
           name="twitter:description"
           content="The most popular Util"
         />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="🥞 Util - A next evolution DeFi exchange on BNB Smart Chain (BSC)" />
+        <meta name="twitter:title" content="Util - A next evolution DeFi exchange on BNB Smart Chain (BSC)" />
         <title>Util</title>
         {(Component as NextPageWithLayout).mp && (
           // eslint-disable-next-line @next/next/no-sync-scripts
