@@ -300,13 +300,13 @@ const HowToPlay: React.FC<React.PropsWithChildren> = () => {
           </Text>
         </Flex>
         <Flex flex="1" justifyContent="center">
-          <Image h="auto" w="300px" src="/images/win-c.png" alt="win-c" />
+          <Image  h="auto" w={{ base: "300px", md: "1024px"}} src="/images/win-c.png" alt="win-c" />
         </Flex>
       </GappedFlex>
       <Divider />
       <GappedFlex flexDirection={['column', 'column', 'column', 'row']}>
         <Flex justifyContent="center">
-          <Image h="auto" w="300px" src="/images/bg-win.png" alt="win-c" />
+          <Image  h="auto" w={{ base: "300px", md: "1024px"}} src="/images/bg-win.png" alt="win-c" />
         </Flex>
         <Flex flexDirection="column">
           <Heading textTransform="uppercase" mb="24px" fontWeight="900" fontSize={{ base: "24px", md: "48px"}} lineHeight="60px" color="#fff">
