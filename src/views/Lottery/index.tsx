@@ -66,7 +66,7 @@ const Lottery = () => {
               <Heading
                 textTransform="uppercase"
                 fontWeight="900"
-                fontSize="48px"
+                fontSize={{base: "38px", md: "48px"}}
                 mb="24px"
                 lineHeight="60px"
                 color="#fff"
@@ -109,7 +109,7 @@ const Lottery = () => {
             <Heading
               textTransform="uppercase"
               fontWeight="900"
-              fontSize="48px"
+              fontSize={{base: "38px", md: "48px"}}
               mb="24px"
               lineHeight="60px"
               color="#fff"

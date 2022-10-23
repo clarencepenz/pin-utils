@@ -80,11 +80,15 @@ const PrizeTotalBalance = styled(Balance)`
   position: relative;
   font-style: normal;
   font-weight: 800;
-  font-size: 76px;
+  font-size: 68px;
   line-height: 127.2%;
   /* identical to box height, or 97px */
 
   text-transform: uppercase;
+  ${({ theme }) => theme.mediaQueries.xs} {
+    font-size: 40px;
+  }
+    
 `
 
 const StyledBuyTicketButton = styled(BuyTicketsButton)<{ disabled: boolean }>`
@@ -122,7 +126,7 @@ const Decorations = styled.div`
   height: 100%;
   background: url(/images/bg-lottery.png);
   background-repeat: no-repeat;
-  background-position: center 0;
+  background-position: center;
   background-size: cover;
 `
 
@@ -244,7 +248,7 @@ const Hero = () => {
           {prizeInBusd.isNaN() ? (
             <Skeleton my="7px" height={60} width={190} />
           ) : (
-            <PrizeTotalBalance fontSize="64px" bold prefix="$" value={prizeTotal} mb="8px" decimals={0} />
+            <PrizeTotalBalance  bold prefix="$" value={prizeTotal} mb="8px" decimals={0} />
           )}
           {/* <Heading position="relative" mb="32px" scale="lg" color="#ffffff">
             {t('in prizes!')}

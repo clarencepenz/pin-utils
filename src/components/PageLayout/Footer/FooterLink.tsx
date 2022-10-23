@@ -44,7 +44,7 @@ const SidebarLink: React.FC<ISidebarLinkProps> = ({ children, pathname, isToBeRe
       <Flex
         px={location.pathname === pathname ? 4 : 2}
         py={4}
-        mx={{ base: "10px", md: 6}}
+        mx={{ base: "4px", md: 6}}
         pos="relative"
         justify="space-between"
         align="center"

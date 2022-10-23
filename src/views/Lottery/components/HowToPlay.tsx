@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import styled from 'styled-components'
-import { Box, Flex, Link, useMatchBreakpoints } from '@pancakeswap/uikit'
-import { Heading, Image, Text } from '@chakra-ui/react'
+import { Flex, Link, useMatchBreakpoints } from '@pancakeswap/uikit'
+import { Box, Heading, Image, Text } from '@chakra-ui/react'
 import { useTranslation } from '@pancakeswap/localization'
 import useTheme from 'hooks/useTheme'
 import { BallWithNumber, MatchExampleA, MatchExampleB, PoolAllocationChart } from '../svgs'
@@ -36,8 +36,16 @@ const StepContainer = styled(Flex)`
   gap: 24px;
   width: 100%;
   flex-direction: column;
-  ${({ theme }) => theme.mediaQueries.md} {
+  ${({ theme }) => theme.mediaQueries.sm} {
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ${({ theme }) => theme.mediaQueries.xs} {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
 `
 
@@ -243,27 +251,27 @@ const HowToPlay: React.FC<React.PropsWithChildren> = () => {
   ]
 
   return (
-    <Box width="100%">
+    <Box width={{ base: "300px", sm: "450px", md: "100%"}}>
       <Flex mb="40px" alignItems="center" flexDirection="column">
-        <Heading textTransform="uppercase" fontWeight="900" fontSize="48px" mb="24px" lineHeight="60px" color="#fff">
+        <Heading textTransform="uppercase" fontWeight="900" fontSize={{ base: "24px", md: "48px"}} mb="24px" color="#fff">
           {t('How to Play')}
         </Heading>
-        <Text fontSize="18px" w="604px" h="66px" lineHeight="22px" color="#fff" textAlign="center">
+        <Text fontSize="18px" color="#fff" textAlign={{base: "left", md: "center"}}>
           {t(
             `If the digits on your tickets match the winning numbers in the correct order, you win a portion of the prize pool. Simple!`,
           )}
-        </Text>
+        </Text> 
       </Flex>
       <StepContainer>
-        <Image h="516px" w="1024px" src="/images/how.png" alt="how to win" />
+        <Image h="auto" w={{ base: "300px", md: "1024px"}} src="/images/how.png" alt="how to win" />
       </StepContainer>
       <Divider />
       <GappedFlex flexDirection={['column', 'column', 'column', 'row']}>
         <Flex flex="2" flexDirection="column">
-          <Heading textTransform="uppercase" fontWeight="900" fontSize="48px" lineHeight="60px" color="#fff">
+          <Heading textTransform="uppercase" fontWeight="900" fontSize={{ base: "24px", md: "48px"}} lineHeight="60px" color="#fff">
             {t('Winning Criteria')}
           </Heading>
-          <Text fontSize="20px" fontWeight="800" w="644px" h="66px" lineHeight="22px" color="#bb935c" textAlign="left">
+          <Text fontSize="20px" fontWeight="800" lineHeight="22px" color="#bb935c" mb={2} textAlign="left">
             {t(`The digits on your ticket must match in the correct order to win.`)}
           </Text>
           <Text mb="16px" color="#fff">
@@ -292,16 +300,16 @@ const HowToPlay: React.FC<React.PropsWithChildren> = () => {
           </Text>
         </Flex>
         <Flex flex="1" justifyContent="center">
-          <Image h="100%" w="443px" src="/images/win-c.png" alt="win-c" />
+          <Image h="auto" w="300px" src="/images/win-c.png" alt="win-c" />
         </Flex>
       </GappedFlex>
       <Divider />
       <GappedFlex flexDirection={['column', 'column', 'column', 'row']}>
-        <Flex flex="2" justifyContent="center">
-          <Image h="444px" w="492px" src="/images/bg-win.png" alt="win-c" />
+        <Flex justifyContent="center">
+          <Image h="auto" w="300px" src="/images/bg-win.png" alt="win-c" />
         </Flex>
-        <Flex flex="2" flexDirection="column">
-          <Heading textTransform="uppercase" mb="24px" fontWeight="900" fontSize="48px" lineHeight="60px" color="#fff">
+        <Flex flexDirection="column">
+          <Heading textTransform="uppercase" mb="24px" fontWeight="900" fontSize={{ base: "24px", md: "48px"}} lineHeight="60px" color="#fff">
             {t('Prize Funds')}
           </Heading>
           <Text color="#fff">{t('The prizes for each lottery round come from three sources:')}</Text>
