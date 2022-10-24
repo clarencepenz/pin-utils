@@ -68,6 +68,7 @@ const DropDownContainer = styled(Box)<{ isOpen: boolean }>`
         border-radius: 0 0 16px 16px;
         box-shadow: ${({ theme }) => theme.tooltip.boxShadow};
         z-index: 300 !important;
+        border: 1px solid rgba(255, 255, 255, 0.11);
       }
     `}
 

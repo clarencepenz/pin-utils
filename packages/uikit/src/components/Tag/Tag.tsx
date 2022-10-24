@@ -18,7 +18,6 @@ const Tag: React.FC<React.PropsWithChildren<TagProps>> = ({ startIcon, endIcon, 
 
 /* eslint-disable react/default-props-match-prop-types */
 Tag.defaultProps = {
-  variant: "primary",
   scale: scales.MD,
   outline: false,
 };

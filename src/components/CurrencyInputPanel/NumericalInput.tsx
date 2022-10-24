@@ -79,7 +79,7 @@ export const Input = memo(function InnerInput({
       pattern="^[0-9]*[.,]?[0-9]*$"
       placeholder={placeholder || '0.0'}
       minLength={1}
-      maxLength={79}
+      maxLength={8}
       spellCheck="false"
     />
   )

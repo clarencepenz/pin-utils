@@ -2,7 +2,6 @@
 import styled from 'styled-components'
 import {
   ChartIcon,
-  Flex,
   HistoryIcon,
   IconButton,
   NotificationDot,
@@ -10,7 +9,7 @@ import {
   useModal,
   ChartDisableIcon,
 } from '@pancakeswap/uikit'
-import { Box, Heading } from '@chakra-ui/react'
+import { Box, Heading,Flex, } from '@chakra-ui/react'
 import { FaToiletPaper } from 'react-icons/fa'
 import TransactionsModal from 'components/App/Transactions/TransactionsModal'
 import GlobalSettings from 'components/Menu/GlobalSettings'
@@ -32,7 +31,7 @@ interface Props {
 const CurrencyInputContainer = styled(Flex)`
   flex-direction: column;
   align-items: flex-start;
-  padding: 0 24px 44px 24px;
+  padding: 0 18px 44px 18px;
   width: 100%;
 `
 
@@ -63,27 +62,27 @@ const ColoredIconButton = styled(IconButton)`
 const CurrencyInputHeader: React.FC<React.PropsWithChildren<Props>> = ({
   title,
   subtitle,
-  setIsChartDisplayed,
+  setIsChartDisplayed = true,
   isChartDisplayed,
   hasAmount,
   onRefreshPrice,
 }) => {
   const [expertMode] = useExpertModeManager()
-  const toggleChartDisplayed = () => {
-    setIsChartDisplayed((currentIsChartDisplayed) => !currentIsChartDisplayed)
-  }
+  // const toggleChartDisplayed = () => {
+  //   setIsChartDisplayed((currentIsChartDisplayed) => !currentIsChartDisplayed)
+  // }
   const [onPresentTransactionsModal] = useModal(<TransactionsModal />)
   const handleOnClick = useCallback(() => onRefreshPrice?.(), [onRefreshPrice])
 
   return (
     <CurrencyInputContainer>
-      <Flex width="100%" alignItems="center" justifyContent="space-between">
+      <Flex flexDirection={{ base: "column", sm: "column", md: "row" }} width="100%" alignItems="center" justifyContent="space-between">
         {/* {setIsChartDisplayed && (
           <ColoredIconButton onClick={toggleChartDisplayed} variant="text" scale="sm">
             {isChartDisplayed ? <ChartDisableIcon color="textSubtle" /> : <ChartIcon width="24px" color="textSubtle" />}
           </ColoredIconButton>
         )} */}
-        <Flex flexDirection="column" alignItems="flex-start" width="100%" mr={18}>
+        <Flex flexDirection="column" alignItems={{ base: "center", md: "flex-start"}} width="100%" mr={18} mb={{ base: "10px", md: "0"}}>
           <Heading textTransform="uppercase" fontSize="26px" color="#fff">
             {title}
           </Heading>

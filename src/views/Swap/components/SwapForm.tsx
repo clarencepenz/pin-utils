@@ -21,7 +21,7 @@ import { Flex } from '@chakra-ui/react'
 import { maxAmountSpend } from 'utils/maxAmountSpend'
 import { useSwapActionHandlers } from 'state/swap/useSwapActionHandlers'
 import AccessRisk from 'views/Swap/components/AccessRisk'
-import { ArrowForwardIcon } from '@chakra-ui/icons'
+import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons'
 
 import CurrencyInputPanel from 'components/CurrencyInputPanel'
 import { CommonBasesType } from 'components/SearchModal/types'
@@ -53,7 +53,7 @@ import { isAddress } from '../../../utils'
 const Label = styled(Text)`
   font-size: 12px;
   font-weight: bold;
-  color: ${({ theme }) => theme.colors.secondary};
+  color: #fff;
 `
 
 const SwitchIconButton = styled(IconButton)`
@@ -64,7 +64,7 @@ const SwitchIconButton = styled(IconButton)`
     display: none;
   }
   &:hover {
-    background-color: ${({ theme }) => theme.colors.primary};
+    background-color:transparent;
     .icon-down {
       display: none;
       fill: white;
@@ -254,8 +254,8 @@ export default function SwapForm({ setIsChartDisplayed, isChartDisplayed, isAcce
         />
         <Wrapper id="swap-page" style={{ minHeight: '412px' }}>
           <AutoColumn gap="sm">
-            <Flex>
-              <Flex>
+            <Flex flexDirection={{ base: "column", md: "row"}}>
+              <Flex justifyContent="center">
                 <CurrencyInputPanel
                   label={independentField === Field.OUTPUT && !showWrap && trade ? t('From (estimated)') : t('From')}
                   value={formattedAmounts[Field.INPUT]}
@@ -274,7 +274,7 @@ export default function SwapForm({ setIsChartDisplayed, isChartDisplayed, isAcce
                 />
               </Flex>
 
-              <AutoColumn style={{ margin: '0 8px' }} justify="space-between">
+              <AutoColumn style={{ margin: '4px 8px' }} justify="space-between">
                 <AutoRow position="relative" justify={isExpertMode ? 'space-between' : 'center'}>
                   <Box
                     bg="#05202c"
@@ -299,7 +299,7 @@ export default function SwapForm({ setIsChartDisplayed, isChartDisplayed, isAcce
                         className="icon-down"
                         color={currencies[Field.INPUT] && currencies[Field.OUTPUT] ? 'primary' : 'text'}
                       />
-                      <ArrowUpDownIcon
+                      <ArrowBackIcon
                         className="icon-up-down"
                         color={currencies[Field.INPUT] && currencies[Field.OUTPUT] ? 'primary' : 'text'}
                       />
@@ -312,7 +312,7 @@ export default function SwapForm({ setIsChartDisplayed, isChartDisplayed, isAcce
                   ) : null}
                 </AutoRow>
               </AutoColumn>
-              <Flex>
+              <Flex justifyContent="center">
                 <CurrencyInputPanel
                   value={formattedAmounts[Field.OUTPUT]}
                   onUserInput={handleTypeOutput}
@@ -383,7 +383,7 @@ export default function SwapForm({ setIsChartDisplayed, isChartDisplayed, isAcce
                     </>
                   )}
                 </RowBetween>
-                <Flex>
+                <Flex >
                   <Flex align="center">
                     <Text bold color="#34D399" fontWeight="800" fontSize="18px">
                       {allowedSlippage / 100}%

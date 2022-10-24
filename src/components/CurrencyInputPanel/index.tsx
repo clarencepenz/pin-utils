@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Currency, Pair } from '@pancakeswap/sdk'
-import { Button, ChevronDownIcon, Text, useModal } from '@pancakeswap/uikit'
+import { Button, ChevronDownIcon, useModal } from '@pancakeswap/uikit'
 import styled, { css } from 'styled-components'
-import { Flex, Box } from '@chakra-ui/react'
+import { Flex, Text, Box } from '@chakra-ui/react'
 import { isAddress } from 'utils'
 import { useTranslation } from '@pancakeswap/localization'
 import { WrappedTokenInfo } from '@pancakeswap/tokens'
@@ -68,7 +68,7 @@ const InputPanel = styled.div`
 `
 const Container = styled.div<{ zapStyle?: ZapStyle; error?: boolean }>`
   width: 192px;
-  height: 50px;
+  height: 40px;
   opacity: 0.66;
   border: 1px solid rgba(255, 255, 255, 0.25);
   filter: drop-shadow(0px 4px 56px rgba(0, 0, 0, 0.07));
@@ -104,6 +104,7 @@ const ContainerInput = styled(Box)`
 
   border-radius: 12px;
   // transform: matrix(-1, 0, 0, 1, 0, 0);
+
 `
 
 type ZapStyle = 'noZap' | 'zap'
@@ -181,20 +182,20 @@ export default function CurrencyInputPanel({
   )
 
   return (
-    <ContainerInput position="relative" id={id}>
+    <ContainerInput w={{base: "100%", md: "232px"}} position="relative" id={id}>
       <Flex flexDirection="column" alignItems="center" justifyContent="space-between" mb={9}>
-        <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" my={4}>
+        <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" my={4} pt={2}>
           {pair ? (
             <DoubleCurrencyLogo currency0={pair.token0} currency1={pair.token1} size={16} />
           ) : currency ? (
             <CurrencyLogo currency={currency} size="24px" />
           ) : null}
           {pair ? (
-            <Text textAlign="left" id="pair" bold>
+            <Text textAlign="left" id="pair" fontWeight="bold">
               {pair?.token0.symbol}:{pair?.token1.symbol}
             </Text>
           ) : (
-            <Text textAlign="left" id="pair" bold mt="6px">
+            <Text textAlign="left" id="pair" fontWeight="bold" mt="6px" color="#fff">
               {(currency && currency.symbol && currency.symbol.length > 20
                 ? `${currency.symbol.slice(0, 4)}...${currency.symbol.slice(
                     currency.symbol.length - 5,
@@ -212,7 +213,7 @@ export default function CurrencyInputPanel({
             {account && (
               <Text
                 onClick={!disabled && onMax}
-                color="textSubtle"
+                color="#fff"
                 style={{ display: 'inline', cursor: 'pointer' }}
                 textTransform="uppercase" 
                 fontSize="10px"
@@ -242,7 +243,7 @@ export default function CurrencyInputPanel({
             <Flex style={{ gap: '4px' }} ml="4px" alignItems="center">
               <CopyButton
                 width="16px"
-                buttonColor="textSubtle"
+                buttonColor="#fff"
                 text={tokenAddress}
                 tooltipMessage={t('Token address copied')}
                 tooltipTop={-20}
@@ -265,7 +266,7 @@ export default function CurrencyInputPanel({
       </Flex>
 
       <Box display="flex" flexDirection="column" m={1}>
-        <Text textAlign="left" ml={3} color="#599BF9" textTransform="uppercase" fontWeight="600" fontSize="10px" mb={2}>
+        <Text textAlign="left" ml={{base: "40px", md: 3}} color="#599BF9" textTransform="uppercase" fontWeight="600" fontSize="10px" mb={2}>
           {InputLabel}
         </Text>
         <InputPanel>
@@ -284,12 +285,12 @@ export default function CurrencyInputPanel({
             </LabelRow>
             <InputRow selected={disableCurrencySelect}>
               {!!currency && showBUSD && Number.isFinite(amountInDollar) && (
-                <Text fontSize="12px" color="textSubtle" mr="12px">
+                <Text fontSize="12px" color="#fff" mr="12px">
                   ~{formatNumber(amountInDollar)} USD
                 </Text>
               )}
               {account && currency && selectedCurrencyBalance?.greaterThan(0) && !disabled && label !== 'To' && (
-                <Flex alignItems="right" justifyContent="right">
+                <Flex alignItems="center" justifyContent="center" width="100%" mt={2}>
                   {showQuickInputButton &&
                     onPercentInput &&
                     [25, 50, 75].map((percent) => (
