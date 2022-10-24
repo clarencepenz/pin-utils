@@ -1,7 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react'
 import { Box, Flex, Image, Link } from '@chakra-ui/react'
-import { FaTwitter, FaTelegram, FaMedium, FaDiscord, FaReddit } from 'react-icons/fa'
+import { FaTwitter, FaInstagram, FaMedium, FaDiscord, FaReddit } from 'react-icons/fa'
+import { RiTelegramLine } from 'react-icons/ri'
+import { AiFillInstagram } from 'react-icons/ai'
+import { BsMedium } from 'react-icons/bs'
+
 import colors from 'config/chakra/styles/colors'
 // import Link from 'next/link';
 
@@ -60,9 +64,21 @@ const SocialMedia: React.FC = () => {
           borderRadius="8px"
           p={2}
         >
-          <FaTelegram color={colors.secondary} fontSize="20px" />
+          <RiTelegramLine color={colors.secondary} fontSize="20px" />
         </Box>
       </Link>{' '}
+      <Link href="/" style={{ marginRight: '6px', marginLeft: '6px' }}>
+        <Box
+          bg="rgba(255, 255, 255, 0.05)"
+          border="1px solid rgba(255, 255, 255, 0.16)"
+          boxShadow="0px 7px 8px rgba(0, 0, 0, 0.16)"
+          backdropFilter=" blur(7.5px)"
+          borderRadius="8px"
+          p={2}
+        >
+          <AiFillInstagram color={colors.secondary} fontSize="20px" />
+        </Box>
+      </Link>
       <Link href="/" style={{ marginRight: '6px', marginLeft: '6px' }}>
         <Box
           bg="rgba(255, 255, 255, 0.05)"
@@ -84,19 +100,7 @@ const SocialMedia: React.FC = () => {
           borderRadius="8px"
           p={2}
         >
-          <FaDiscord color={colors.secondary} fontSize="20px" />
-        </Box>
-      </Link>
-      <Link href="/" style={{ marginRight: '6px', marginLeft: '6px' }}>
-        <Box
-          bg="rgba(255, 255, 255, 0.05)"
-          border="1px solid rgba(255, 255, 255, 0.16)"
-          boxShadow="0px 7px 8px rgba(0, 0, 0, 0.16)"
-          backdropFilter=" blur(7.5px)"
-          borderRadius="8px"
-          p={2}
-        >
-          <FaDiscord color={colors.secondary} fontSize="20px" />
+          <BsMedium color={colors.secondary} fontSize="20px" />
         </Box>
       </Link>
       <Link href="/" style={{ marginRight: '6px', marginLeft: '6px' }}>
