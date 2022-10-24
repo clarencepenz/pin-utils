@@ -309,7 +309,7 @@ function DesktopModal<T>({
         className={desktopWalletSelectionClass}
       >
         <AtomBox px="48px">
-          <Heading color="color" as="h4">
+          <Heading color="#fff" as="h4">
             {t('Connect Wallet')}
           </Heading>
           <Text color="textSubtle" small pt="24px" pb="32px">
@@ -331,7 +331,7 @@ function DesktopModal<T>({
           }}
         />
       </AtomBox>
-      <AtomBox
+      {/* <AtomBox
         flex={1}
         mx="24px"
         display={{
@@ -359,7 +359,7 @@ function DesktopModal<T>({
           )}
           {selected && selected.installed === false && <NotInstalled qrCode={qrCode} wallet={selected} />}
         </AtomBox>
-      </AtomBox>
+      </AtomBox> */}
     </>
   )
 }
@@ -411,13 +411,11 @@ export function WalletModalV2<T = unknown>(props: WalletModalV2Props<T>) {
     <ModalV2 closeOnOverlayClick {...rest}>
       <ModalWrapper onDismiss={props.onDismiss} style={{ overflow: 'visible', border: 'none' }}>
         <AtomBox position="relative">
-          <TabContainer>
-            {isMobile ? (
-              <MobileModal connectWallet={connectWallet} wallets={wallets} />
-            ) : (
-              <DesktopModal connectWallet={connectWallet} wallets={wallets} />
-            )}
-          </TabContainer>
+          {isMobile ? (
+            <MobileModal connectWallet={connectWallet} wallets={wallets} />
+          ) : (
+            <DesktopModal connectWallet={connectWallet} wallets={wallets} />
+          )}
         </AtomBox>
       </ModalWrapper>
     </ModalV2>
