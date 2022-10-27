@@ -5,6 +5,8 @@ import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { AiOutlineLogout } from 'react-icons/ai'
 import { Flex, Button, IconButton, Image, Box, Link } from '@chakra-ui/react'
 import { TriangleDownIcon, HamburgerIcon } from '@chakra-ui/icons'
+import { useTranslation, languageList } from '@pancakeswap/localization'
+import LangSelector from '@pancakeswap/uikit/src/components/LangSelector/LangSelector'
 import GlobalSettings from 'components/Menu/GlobalSettings'
 // import { FaSun, FaMoon } from 'react-icons/fa'
 
@@ -23,6 +25,7 @@ interface IMenuProps {
 const Menu: React.FC<IMenuProps> = ({ onUpdateMenuHeight, onMobileSidebarOpen }) => {
   const menuRef = useRef(null)
   // const { colorMode, toggleColorMode } = useColorMode()
+  const { currentLanguage, setLanguage, t } = useTranslation()
 
   const { account, chainId } = useActiveWeb3React()
   const { logout } = useAuth()
@@ -132,7 +135,16 @@ const Menu: React.FC<IMenuProps> = ({ onUpdateMenuHeight, onMobileSidebarOpen })
         </ul>
       </Box>
       <Flex flex={1} justify="flex-end" align="center" px={{ base: 2, lg: 8 }}>
-        {/* <GlobalSettings/> */}
+        <Box mx={2} mt={2}>
+          <LangSelector
+            currentLang={currentLanguage.code}
+            langs={languageList}
+            setLang={setLanguage}
+            buttonScale="xs"
+            color="text"
+            hideLanguage
+          />
+        </Box>
         {account ? (
           <Button
             size="md"
