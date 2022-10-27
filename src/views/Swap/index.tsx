@@ -31,8 +31,19 @@ export default function Swap() {
   const [isChartExpanded, setIsChartExpanded] = useState(false)
   const [userChartPreference, setUserChartPreference] = useExchangeChartManager(isMobile)
   const [isChartDisplayed, setIsChartDisplayed] = useState(userChartPreference)
+  const [width, setWidth] = useState(window.innerWidth);
+  const breakpoint = 620;
 
   useDefaultsFromURLSearch()
+
+  useEffect(() => {
+    window.addEventListener("resize", () => setWidth(window.innerWidth));
+
+    if(width > breakpoint){
+      setIsChartDisplayed(true)
+    }
+   
+  }, [width])
 
   useEffect(() => {
     setUserChartPreference(isChartDisplayed)
@@ -69,7 +80,8 @@ export default function Swap() {
   return (
     <Page removePadding={isChartExpanded} hideFooterOnDesktop={isChartExpanded}>
       <Flex width="100%" justifyContent="center" position="relative" mt={5}>
-        {!isMobile && isChartSupported && (
+       <Box display={{ base: "none", md: "block"}}>
+       {/* {!isMobile && isChartSupported && ( */}
           <PriceChartContainer
             inputCurrencyId={inputCurrencyId}
             inputCurrency={currencies[Field.INPUT]}
@@ -80,7 +92,8 @@ export default function Swap() {
             isChartDisplayed={isChartDisplayed}
             currentSwapPrice={singleTokenPrice}
           />
-        )}
+        {/* )} */}
+       </Box>
         {isChartSupported && (
           <BottomDrawer
             content={
