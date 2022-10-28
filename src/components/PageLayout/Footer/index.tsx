@@ -14,12 +14,15 @@ import {
   Box,
   Text,
 } from '@chakra-ui/react'
+import { useTranslation } from '@pancakeswap/localization'
 
 import colors from 'config/chakra/styles/colors'
 
 import Links from './Links'
 
 const Footer = () => {
+  const {  t } = useTranslation()
+
   return (
     <Box position="relative">
       <Image h="full" position="absolute" src="/images/left-logo.png" />
@@ -34,10 +37,10 @@ const Footer = () => {
           </Box>
           <Box display="flex" mt={4}>
             <Text color="#F9F9FB" fontSize="14px" fontWeight="400" mx={8}>
-              Terms of Use
+              {t('Terms of Use')}
             </Text>
             <Text color="#F9F9FB" fontSize="14px" fontWeight="400">
-              Privacy Policy
+              {t('Privacy Policy')}
             </Text>
           </Box>
         </Flex>

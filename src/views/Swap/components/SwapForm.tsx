@@ -270,7 +270,7 @@ export default function SwapForm({ setIsChartDisplayed, isChartDisplayed, isAcce
                   id="swap-currency-input"
                   showCommonBases
                   commonBasesType={CommonBasesType.SWAP_LIMITORDER}
-                  InputLabel="You give"
+                  InputLabel={t("You Give")}
                 />
               </Flex>
 
@@ -324,7 +324,7 @@ export default function SwapForm({ setIsChartDisplayed, isChartDisplayed, isAcce
                   id="swap-currency-output"
                   showCommonBases
                   commonBasesType={CommonBasesType.SWAP_LIMITORDER}
-                  InputLabel="You get"
+                  InputLabel={t("You Get")}
                 />
               </Flex>
             </Flex>

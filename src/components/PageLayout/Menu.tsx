@@ -8,6 +8,7 @@ import { TriangleDownIcon, HamburgerIcon } from '@chakra-ui/icons'
 import { useTranslation, languageList } from '@pancakeswap/localization'
 import LangSelector from '@pancakeswap/uikit/src/components/LangSelector/LangSelector'
 import GlobalSettings from 'components/Menu/GlobalSettings'
+
 // import { FaSun, FaMoon } from 'react-icons/fa'
 
 import ConnectWalletButton from 'components/ConnectWalletButton'
@@ -84,19 +85,19 @@ const Menu: React.FC<IMenuProps> = ({ onUpdateMenuHeight, onMobileSidebarOpen })
       <Box
         className="menu-desktop__nav"
         display={{ base: 'none', md: 'none', lg: 'block' }}
-        w={{ md: '400px', lg: '400px' }}
+        w={{ md: '450px', lg: '450px' }}
       >
         <ul className="menu-desktop__list" data-v-4754eb8b>
           <li className="menu-desktop__item" data-v-4754eb8b>
-            <Link style={{ textDecoration: 'none' }} href="/swap" className="menu-desktop__link" data-v-4754eb8b>
-              SWAP
+            <Link style={{ textDecoration: 'none', textTransform: "uppercase" }} href="/swap" className="menu-desktop__link" data-v-4754eb8b>
+            {t('Swap')}
             </Link>
           </li>
 
           <li className="menu-desktop__item" data-v-4754eb8b>
             <div className="menu-desktop-sub" data-v-f0c40470 data-v-4754eb8b>
               <span className="menu-desktop-sub__title-btn" data-v-f0c40470>
-                Earn{' '}
+              {t('Earn')}{' '}
                 <i style={{ padding: '0 10px' }}>
                   <TriangleDownIcon />
                 </i>
@@ -110,7 +111,7 @@ const Menu: React.FC<IMenuProps> = ({ onUpdateMenuHeight, onMobileSidebarOpen })
                       className="menu-desktop-sub__link"
                       data-v-f0c40470
                     >
-                      Pools
+                     {t('Pools')}
                     </Link>
                   </li>
                   <li title="Farms" className="menu-desktop-sub__item" data-v-f0c40470>
@@ -120,7 +121,7 @@ const Menu: React.FC<IMenuProps> = ({ onUpdateMenuHeight, onMobileSidebarOpen })
                       className="menu-desktop-sub__link"
                       data-v-f0c40470
                     >
-                      Farms
+                       {t('Farms')}
                     </Link>
                   </li>
                 </ul>
@@ -128,8 +129,8 @@ const Menu: React.FC<IMenuProps> = ({ onUpdateMenuHeight, onMobileSidebarOpen })
             </div>
           </li>
           <li className="menu-desktop__item" data-v-4754eb8b>
-            <Link style={{ textDecoration: 'none' }} href="/lottery" className="menu-desktop__link" data-v-4754eb8b>
-              LOTTERY
+            <Link style={{ textDecoration: 'none', textTransform: "uppercase" }} href="/lottery" className="menu-desktop__link" data-v-4754eb8b>
+            {t('Lottery')}
             </Link>
           </li>
         </ul>

@@ -5,6 +5,7 @@ import { FaTwitter, FaInstagram, FaMedium, FaDiscord, FaReddit } from 'react-ico
 import { RiTelegramLine } from 'react-icons/ri'
 import { AiFillInstagram } from 'react-icons/ai'
 import { BsMedium } from 'react-icons/bs'
+import { useTranslation } from '@pancakeswap/localization'
 
 import colors from 'config/chakra/styles/colors'
 // import Link from 'next/link';
@@ -120,6 +121,8 @@ const SocialMedia: React.FC = () => {
 }
 
 const Links: React.FC<{ [x: string]: any }> = ({ ...props }) => {
+  const { t } = useTranslation()
+
   return (
     <Flex flex={1} mt={4}>
       <Flex
@@ -150,7 +153,7 @@ const Links: React.FC<{ [x: string]: any }> = ({ ...props }) => {
                   isToBeReleased={link.toBeReleased}
                   key={link.name}
                 >
-                  {link.name}
+                  {t(link.name)}
                 </SidebarLink>
               ))}
             </SidebarLinksContainer>

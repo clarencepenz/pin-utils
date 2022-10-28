@@ -208,7 +208,7 @@ export default function CurrencyInputPanel({
         <Flex flexDirection="column">
           <Flex mb={2} alignItems="center">
             <Text color="#34D399" textTransform="uppercase" fontSize="10px" textAlign="left"  mr="auto">
-              Select tokens
+              {t('Select Tokens')}
             </Text>
             {account && (
               <Text
@@ -236,7 +236,7 @@ export default function CurrencyInputPanel({
             }}
           >
             <Flex w="192px" h="30px" alignItems="center">
-              <Text mr="auto">SWAP TOKENS</Text> {!disableCurrencySelect && <ChevronDownIcon />}
+              <Text mr="auto" textTransform="uppercase">{t('Swap Tokens')}</Text> {!disableCurrencySelect && <ChevronDownIcon />}
             </Flex>
           </CurrencySelectButton>
           {/* {token && tokenAddress ? (
