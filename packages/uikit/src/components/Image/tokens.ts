@@ -2,6 +2,15 @@
  * @see https://github.com/pancakeswap/pancake-frontend/blob/develop/src/config/constants/tokens.ts
  */
 const tokens = {
+  irs: {
+    symbol: "IRL",
+    address: {
+      56: "0x13c8943C6379EA32aaC923b7CDfADA8C62f76384",
+      97: "0xFa60D973F7642B748046464e165A65B7323b0DEE",
+    },
+    decimals: 18,
+    projectLink: "https://pancakeswap.finance/",
+  },
   cake: {
     symbol: "CAKE",
     address: {

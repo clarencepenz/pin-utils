@@ -1,5 +1,5 @@
 import { ChainId, Token, WBNB } from '@pancakeswap/sdk'
-import { BUSD_BSC, CAKE_MAINNET, USDT_BSC } from './common'
+import { BUSD_BSC, CAKE_MAINNET, USDT_BSC, IRS } from './common'
 
 export const bscTokens = {
   wbnb: WBNB[ChainId.BSC],
@@ -13,6 +13,7 @@ export const bscTokens = {
     'https://www.binance.com/',
   ),
   cake: CAKE_MAINNET,
+  irs: IRS,
   gmi: new Token(ChainId.BSC, '0x93D8d25E3C9A847a5Da79F79ecaC89461FEcA846', 18, 'GMI', 'Gamifi', 'https://gamifi.gg/'),
   tlos: new Token(
     ChainId.BSC,

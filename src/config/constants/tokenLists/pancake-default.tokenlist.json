@@ -19,6 +19,14 @@
       "logoURI": "https://pancakeswap.finance/images/tokens/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c.png"
     },
     {
+      "name": "IRS Token",
+      "symbol": "IRS",
+      "address": "0x13c8943C6379EA32aaC923b7CDfADA8C62f76384",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://res.cloudinary.com/dos6ec8wr/image/upload/v1573081592/w5yt1zkjx2in0jzo934j.png"
+    },
+    {
       "name": "BUSD Token",
       "symbol": "BUSD",
       "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
@@ -50,6 +58,7 @@
       "decimals": 18,
       "logoURI": "https://pancakeswap.finance/images/tokens/0x55d398326f99059fF775485246999027B3197955.png"
     },
+   
     {
       "name": "PancakeSwap Token",
       "symbol": "CAKE",

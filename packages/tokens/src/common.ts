@@ -9,6 +9,15 @@ export const CAKE_MAINNET = new Token(
   'https://pancakeswap.finance/',
 )
 
+export const IRS = new Token(
+  ChainId.BSC,
+  '0x13c8943C6379EA32aaC923b7CDfADA8C62f76384',
+  18,
+  'IRS',
+  'IRS Token',
+  'https://pancakeswap.finance/',
+)
+
 export const CAKE_TESTNET = new Token(
   ChainId.BSC_TESTNET,
   '0xFa60D973F7642B748046464e165A65B7323b0DEE',
