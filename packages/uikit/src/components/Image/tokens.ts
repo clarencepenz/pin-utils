@@ -3,7 +3,7 @@
  */
 const tokens = {
   irs: {
-    symbol: "IRL",
+    symbol: "IRS",
     address: {
       56: "0x13c8943C6379EA32aaC923b7CDfADA8C62f76384",
       97: "0xFa60D973F7642B748046464e165A65B7323b0DEE",
