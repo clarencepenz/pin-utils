@@ -18,6 +18,7 @@ export default Card
 export const LightCard = styled(Card)`
   border: 1px solid ${({ theme }) => theme.colors.cardBorder};
   background-color: ${({ theme }) => theme.colors.backgroundAlt};
+  margin-block: 1rem;
 `
 
 export const LightGreyCard = styled(Card)`

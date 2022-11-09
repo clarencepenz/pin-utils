@@ -43,7 +43,6 @@ const CurrencySelectButton = styled(Button).attrs({ variant: 'text', scale: 'sm'
     zapStyle &&
     css`
       padding: 8px;
-      background: ${theme.colors.background};
       border: 1px solid ${theme.colors.cardBorder};
       border-radius: ${zapStyle === 'zap' ? '0px' : '8px'} 8px 0px 0px;
       height: auto;
@@ -88,7 +87,7 @@ const Overlay = styled.div`
   position: absolute;
   inset: 0;
   opacity: 0.6;
-  background-color: ${({ theme }) => theme.colors.backgroundAlt};
+  // background-color: ${({ theme }) => theme.colors.backgroundAlt};
 `
 
 const ContainerInput = styled(Box)`
@@ -133,6 +132,7 @@ interface CurrencyInputPanelProps {
   error?: boolean
   showBUSD?: boolean
   InputLabel?: string
+  style?: any
 }
 export default function CurrencyInputPanel({
   value,
@@ -158,6 +158,7 @@ export default function CurrencyInputPanel({
   error,
   showBUSD,
   InputLabel,
+  style
 }: CurrencyInputPanelProps) {
   const { account } = useActiveWeb3React()
   const selectedCurrencyBalance = useCurrencyBalance(account ?? undefined, currency ?? undefined)
@@ -182,7 +183,7 @@ export default function CurrencyInputPanel({
   )
 
   return (
-    <ContainerInput w={{base: "100%", md: "232px"}} position="relative" id={id}>
+    <ContainerInput w={{base: "100%", md: "232px"}} style={style} position="relative" id={id}>
       <Flex flexDirection="column" alignItems="center" justifyContent="space-between" mb={9}>
         <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" my={4} pt={2}>
           {pair ? (
